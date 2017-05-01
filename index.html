@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dice</title>
+	</head>
+	<style>
+		* {
+		  font-family: Helvetica, Arial, sans-serif;
+		  text-align: center;
+		}
+		button {
+		  background-color: rgb(82, 186, 179);
+		  border-radius: 6px;
+		  border: none;
+		  color: rgb(255, 255, 255);
+		  padding: 10px;
+		  text-transform: uppercase;
+		  width: 200px;
+		  cursor: pointer;
+		}
+		#placeholder {
+		  height: 100px;
+		  width: 100px;
+		  padding: 50px;
+		  margin: 50px auto;
+		  border: 1px solid gray;
+		  border-radius: 10px;  
+		  font-size:80px;
+		}
+	</style>
+	<body>
+		<div id="placeholder">
+		</div>
+		<button id="button">Roll Dice</button>
+	</body>
+	<script>
+		var Dice = function(sides) {
+			this.sides = sides;
+		  this.roll = function(){
+		  	var randomNum = Math.floor(Math.random() * sides) + 1;
+		    printNum(randomNum);
+		  }
+		}
+
+		function printNum(number){
+			var placeholder = document.querySelector('#placeholder');
+		  placeholder.innerHTML = number;
+		}
+
+		var myDice = new Dice(6);
+
+		const button = document.querySelector('#button');
+		button.onclick = function(){
+			myDice.roll();
+		}
+	</script>
+</html>
