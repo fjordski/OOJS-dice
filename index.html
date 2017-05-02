@@ -38,13 +38,13 @@
 			this.sides = sides;
 		  this.roll = function(){
 		  	var randomNum = Math.floor(Math.random() * sides) + 1;
-		    printNum(randomNum);
+		    	printNum(randomNum);
 		  }
 		}
 
 		function printNum(number){
-			var placeholder = document.querySelector('#placeholder');
-		  placeholder.innerHTML = number;
+		    var placeholder = document.querySelector('#placeholder');
+		    placeholder.innerHTML = number;
 		}
 
 		var myDice = new Dice(6);
